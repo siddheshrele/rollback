@@ -1,7 +1,9 @@
 pipeline {
   agent any
   parameters {
-    gitParameter branchFilter: 'origin/(?!.*master)(.*)', defaultValue: 'master', name: 'BRANCH', type: 'PT_BRANCH'
+    //exclude to show critical branches  
+    //gitParameter branchFilter: 'origin/(?!.*master)(.*)', defaultValue: 'master', name: 'BRANCH', type: 'PT_BRANCH'
+    gitParameter branchFilter: 'origin/(.*)', defaultValue: 'master', name: 'BRANCH', type: 'PT_BRANCH'	  
   }
   stages {
     stage('Initalize the branches names') {
