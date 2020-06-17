@@ -1,7 +1,7 @@
 pipeline {
   agent any
   parameters {
-    gitParameter branchFilter: 'origin/(?!.*master)(?!.*rollback)(.*)', defaultValue: 'master', name: 'BRANCH', type: 'PT_BRANCH'
+    gitParameter branchFilter: 'origin/(?!.*rollback)(?!.*master)(.*)', defaultValue: 'master', name: 'BRANCH', type: 'PT_BRANCH'
   }
   stages {
     stage('Initalize the branches names') {
