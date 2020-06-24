@@ -23,6 +23,7 @@ pipeline {
 					sh 'pwd'
 					sh 'ls -lha'
 					sh 'cat version.txt'
+				sh 'git tag --contains ${GIT_COMMIT}'
 			}
 		} 
     }
